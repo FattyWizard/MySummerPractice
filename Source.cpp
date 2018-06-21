@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <conio.h>
-void Chk_bng_trn();
+ void Chk_bng_trn();
 float Ax, Ay, Bx, By, Cx, Cy, Dx, Dy;
 int main()
 {
@@ -26,3 +26,14 @@ int main()
 	_getch();
 	return 0;
 }
+   void Chk_bng_trn()
+  {
+	int res1, res2, res3;
+	res1 = (Ax - Dx)*(By - Ay) - (Bx - Ax)*(Ay - Dy);
+	res2 = (Bx - Dx)*(Cy - By) - (Cx - Bx)*(By - Dy);
+	res3 = (Cx - Dx)*(Ay - Cy) - (Ax - Cx)*(Cy - Dy);
+	if (res1&&res2&&res3 > 0 || res1 && res2&&res3 < 0) {
+		printf("The point is belong to the triangle");
+	}
+	else printf("The point does not belong to the triangle");
+  }
